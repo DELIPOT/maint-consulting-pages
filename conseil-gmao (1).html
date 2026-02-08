@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseil en Mise en Œuvre de Solutions GMAO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e8449 0%, #186a3b 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .intro {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 40px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .reassurance-banner {
+            background: linear-gradient(135deg, #e8f8f5 0%, #d5f4e6 100%);
+            border: 2px solid #27ae60;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.1);
+        }
+
+        .reassurance-banner h2 {
+            color: #1e8449;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .reassurance-banner > p {
+            font-size: 1.1em;
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .reassurance-banner strong {
+            color: #1e8449;
+            font-weight: 700;
+        }
+
+        .reassurance-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .reassurance-points .point {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .reassurance-points .icon {
+            font-size: 1.5em;
+        }
+
+        .reassurance-points span:last-child {
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+
+        .benefits {
+            margin: 40px 0;
+        }
+
+        .benefits h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .benefit-card {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #27ae60;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.3);
+        }
+
+        .benefit-card h3 {
+            color: #27ae60;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .benefit-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            margin: 40px -40px -50px -40px;
+        }
+
+        .cta-section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #27ae60;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4);
+        }
+
+        .expertise {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .expertise h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .expertise ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .expertise li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+
+        .expertise li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 40px 20px;
+            }
+
+            .logo {
+                max-width: 250px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .cta-section {
+                padding: 40px 20px;
+                margin: 30px -20px -30px -20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Maint Consulting" class="logo">
+            <h1>Conseil en GMAO</h1>
+            <p class="subtitle">Accompagnement expert pour la mise en œuvre de votre solution de maintenance</p>
+        </header>
+
+        <div class="content">
+            <div class="reassurance-banner">
+                <h2>Une expertise accessible</h2>
+                <p>
+                    Contrairement aux tarifs pratiqués par les éditeurs de solutions ou les grands cabinets de conseil, 
+                    mon approche indépendante vous garantit <strong>un accompagnement de qualité à un tarif maîtrisé</strong>. 
+                    En tant que consultant indépendant spécialisé en GMAO, je vous propose une étude personnalisée 
+                    sans les surcoûts habituels des grandes structures. Mon objectif : vous aider à faire les bons choix 
+                    dès le départ pour optimiser votre investissement, et non alourdir votre budget d'étude.
+                </p>
+                <div class="reassurance-points">
+                    <div class="point">
+                        <span class="icon">💰</span>
+                        <span>Tarifs transparents et compétitifs</span>
+                    </div>
+                    <div class="point">
+                        <span class="icon">🎯</span>
+                        <span>Conseil indépendant sans commission</span>
+                    </div>
+                    <div class="point">
+                        <span class="icon">⚡</span>
+                        <span>Intervention ciblée et efficace</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="intro">
+                Vous envisagez de mettre en place une solution de GMAO (Gestion de Maintenance Assistée par Ordinateur) 
+                dans votre entreprise ? Je vous accompagne dans cette démarche stratégique avec mon expertise pour 
+                garantir le succès de votre projet.
+            </p>
+
+            <div class="benefits">
+                <h2>Mes domaines d'intervention</h2>
+                <div class="benefit-grid">
+                    <div class="benefit-card">
+                        <h3>Analyse des besoins</h3>
+                        <p>Étude approfondie de vos processus de maintenance actuels et identification des opportunités d'amélioration.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>Choix de la solution</h3>
+                        <p>Conseil objectif pour sélectionner la GMAO la mieux adaptée à votre contexte et vos contraintes.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>Stratégie de déploiement</h3>
+                        <p>Élaboration d'un plan de mise en œuvre réaliste et progressif pour garantir l'adoption par les équipes.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>Optimisation des processus</h3>
+                        <p>Restructuration des workflows de maintenance pour tirer pleinement parti des fonctionnalités de la GMAO.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>Formation et accompagnement</h3>
+                        <p>Préparation des équipes au changement et accompagnement dans la prise en main de l'outil.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>ROI et indicateurs</h3>
+                        <p>Définition des KPIs pertinents et aide à la mesure du retour sur investissement de votre projet GMAO.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="expertise">
+                <h3>Pourquoi faire appel à un conseil externe ?</h3>
+                <ul>
+                    <li>Bénéficier d'une expérience éprouvée sur de multiples projets GMAO</li>
+                    <li>Éviter les pièges courants et les erreurs coûteuses</li>
+                    <li>Accélérer le processus de décision grâce à une méthodologie structurée</li>
+                    <li>Obtenir un regard objectif et indépendant des éditeurs de solutions</li>
+                    <li>Maximiser vos chances de succès dès la phase d'étude</li>
+                    <li>Optimiser votre investissement en choisissant la solution la plus adaptée</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Prenons contact</h2>
+            <p>Discutons de votre projet GMAO et des opportunités d'optimisation pour votre service maintenance.</p>
+            
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Nom et Prénom *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Entreprise *</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email professionnel *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Parlez-moi de votre projet GMAO *</label>
+                    <textarea id="message" name="message" required placeholder="Décrivez brièvement votre contexte, vos objectifs et vos questions..."></textarea>
+                </div>
+                
+                <button type="submit">Demander un premier échange</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                company: document.getElementById('company').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+            };
+            
+            const subject = encodeURIComponent('Demande de conseil GMAO - ' + formData.company);
+            const body = encodeURIComponent(
+                'Nom : ' + formData.name + '\n' +
+                'Entreprise : ' + formData.company + '\n' +
+                'Email : ' + formData.email + '\n' +
+                'Téléphone : ' + formData.phone + '\n\n' +
+                'Message :\n' + formData.message
+            );
+            
+            window.location.href = 'mailto:didier.elipot@maint-consulting.fr?subject=' + subject + '&body=' + body;
+            
+            alert('Merci pour votre intérêt ! Votre client email va s\'ouvrir pour envoyer votre message.');
+        }
+    </script>
+</body>
+</html>
